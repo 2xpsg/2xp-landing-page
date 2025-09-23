@@ -1,0 +1,54 @@
+#https://2xp.sg/llms.txt
+# 2XP
+> 2XP is a Singapore-based digital agency specializing in building next-generation SaaS solutions for sports and education sectors. We create scalable platforms that transform how communities connect, learn, and thrive together.
+
+## Summary
+
+> 2XP Private Limited develops innovative SaaS products with a focus on global data-sharing ecosystems. Our flagship product, Hoopers Hub, revolutionizes basketball league management by connecting leagues worldwide through unified player and team databases. We combine over 20 years of web development expertise with AI-powered innovation to build platforms for thousands of users rather than individual organizations.
+
+## Key Content Areas
+
+### Company Information
+- **Founded**: Building on 10+ years of experience from predecessor company Unicomi Pte Ltd
+- **Location**: Singapore
+- **Specialization**: SaaS solutions for sports and education
+- **Email**: hello@2xp.sg
+- **Mission**: Building next-generation platforms that transform how communities connect, learn, and thrive
+
+### Our Flagship Product
+**Hoopers Hub** - A revolutionary basketball league management platform that creates unified ecosystems where all leagues share global player data, enabling:
+- Global player statistics and history tracking across all leagues
+- Cross-league team and player discovery
+- Unified tournament and league management
+- Breaking down traditional siloed platform barriers
+
+### Services & Expertise
+- **League Management Platforms**: Global data-sharing sports management systems
+- **Custom Web Applications**: Complex systems, APIs, and integrations built for performance and security
+- **Sports & Education Solutions**: Comprehensive tools from basketball league management to counselling systems and admissions platforms
+
+### Technology Focus
+- Modern web technologies with performance optimization
+- AI-powered innovation and automation
+- Scalable SaaS architecture design
+- Cross-platform compatibility and responsive design
+
+## Important URLs
+
+### Primary Page
+- `/` - Main landing page with complete company overview, product showcase, and contact information
+
+### Key Sections (Single Page Application)
+- `/#hero` - Company introduction and value proposition
+- `/#about` - Company story, experience, and mission
+- `/#product` - Hoopers Hub product details and features
+- `/#contact` - Contact information and business inquiry form
+
+### Assets
+- `/images/hoopershub.png` - Hoopers Hub product screenshot
+
+## Contact Information
+
+**Primary Contact**: hello@2xp.sg
+
+> For business inquiries, partnership opportunities, or product demonstrations, reach out to explore how 2XP can help transform your sports or education organization with our SaaS solutions.
