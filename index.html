@@ -203,7 +203,7 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="#hero" class="text-2xl font-bold gradient-text">2XP SG</a>
+                <a href="#hero" class="text-3xl font-bold gradient-text">2XP</a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="hover:text-purple-accent transition-colors">About</a>
                     <a href="#product" class="hover:text-purple-accent transition-colors">Product</a>
@@ -270,92 +270,46 @@
                 <div class="title-line absolute w-32 h-1 bg-gradient-to-r from-purple-accent to-blue-accent mx-auto left-0 right-0 mt-4"></div>
             </div>
 
-            <!-- Artistic Content Layout -->
-            <div class="about-content relative">
-                <!-- Central Floating Card -->
-                <div class="central-card absolute left-1/2 top-1/2 w-80 h-80 -translate-x-1/2 -translate-y-1/2 z-20">
-                    <div class="card-inner bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-3xl p-8 border border-purple-accent/30 transform-gpu">
-                        <div class="central-icon w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full flex items-center justify-center">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold gradient-text text-center mb-4">2XP Innovation</h3>
-                        <p class="text-gray-300 text-center text-sm leading-relaxed">
-                            A decade of expertise fused with relentless innovation
+            <!-- Clean Text Layout -->
+            <div class="about-content relative max-5-4xl mx-auto">
+                <!-- Main Story -->
+                <div class="story-main text-center mb-16">
+                    <div class="story-text">
+                        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 story-paragraph">
+                            At <span class="text-purple-accent font-semibold">2XP</span>, we fuse over a decade of app-development expertise with a relentless pursuit of innovation. 
+                        </p>
+
+                        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 story-paragraph">
+                            <p class="text-lg leading-relaxed text-gray-300 mb-6">Our journey began with Unicomi Pte Ltd, a digital agency we started more than a decade ago. Over the years, we collaborated with clients across sectors including multinational corporations, banking, insurance, and education.</p>
+                            <p class="text-lg leading-relaxed text-gray-300 mb-6">With 2XP, our focus is different. Instead of building custom solutions for individual clients, we are creating scalable products that can be used by entire communities. Sports and education are where we begin, applying the expertise gained at Unicomi to build platforms designed for thousands of users rather than one organisation at a time.</p>
                         </p>
                     </div>
                 </div>
 
-                <!-- Orbiting Story Cards -->
-                <div class="story-orbit relative w-full h-96">
-                    <!-- Story Card 1 - Top Left -->
-                    <div class="story-card story-1 absolute w-72 h-48 top-0 left-0">
-                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
-                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mb-4 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-2">From Unicomi</h4>
-                            <p class="text-gray-300 text-sm">Our journey began serving multinational corporations, banking, and education sectors</p>
-                        </div>
+                <!-- Stats Row -->
+                <div class="stats-row grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-black gradient-text mb-2">20+ Years of Experience</div>
+                        <div class="stat-label text-gray-400 text-lg">in web and app development</div>
                     </div>
-
-                    <!-- Story Card 2 - Top Right -->
-                    <div class="story-card story-2 absolute w-72 h-48 top-0 right-0">
-                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
-                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-4 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-2">To Communities</h4>
-                            <p class="text-gray-300 text-sm">Now building scalable products for thousands of users in sports and education</p>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-black gradient-text mb-2">Proven Expertise</div>
+                        <div class="stat-label text-gray-400 text-lg">in various fields</div>
                     </div>
-
-                    <!-- Story Card 3 - Bottom Left -->
-                    <div class="story-card story-3 absolute w-72 h-48 bottom-0 left-0">
-                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
-                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mb-4 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-2">10+ Years</h4>
-                            <p class="text-gray-300 text-sm">A decade of app development expertise across multiple industries</p>
-                        </div>
-                    </div>
-
-                    <!-- Story Card 4 - Bottom Right -->
-                    <div class="story-card story-4 absolute w-72 h-48 bottom-0 right-0">
-                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
-                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-4 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-2">Future Focus</h4>
-                            <p class="text-gray-300 text-sm">Building next-gen platforms for sports and education communities</p>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-black gradient-text mb-2">Focused Mission</div>
+                        <div class="stat-label text-gray-400 text-lg">to build scalable products for sports and education</div>
                     </div>
                 </div>
 
-                <!-- Connecting Lines -->
-                <svg class="connection-lines absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 800 400">
-                    <defs>
-                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#7F5AF0;stop-opacity:0.4" />
-                            <stop offset="50%" style="stop-color:#00CFFF;stop-opacity:0.6" />
-                            <stop offset="100%" style="stop-color:#7F5AF0;stop-opacity:0.4" />
-                        </linearGradient>
-                    </defs>
-                    <path class="connection-line line-1" d="M150,100 Q400,200 650,100" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
-                    <path class="connection-line line-2" d="M150,300 Q400,200 650,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
-                    <path class="connection-line line-3" d="M150,100 Q400,200 150,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
-                    <path class="connection-line line-4" d="M650,100 Q400,200 650,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
-                </svg>
+                <!-- Mission Statement -->
+                <div class="mission-statement text-center mt-16">
+                    <div class="mission-text">
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mission-paragraph">
+                            <span class="mission-word">Building</span> <span class="mission-word">next-generation</span> <span class="mission-word">platforms</span> <span class="mission-word">that</span> <span class="mission-word">transform</span> <span class="mission-word">how</span> <span class="mission-word">communities</span> <span class="mission-word">connect,</span> <span class="mission-word">learn,</span> <span class="mission-word">and</span> <span class="mission-word gradient-text font-semibold">thrive</span> <span class="mission-word">together.</span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
