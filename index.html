@@ -202,26 +202,8 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-center items-center">
                 <a href="#hero" class="text-3xl font-bold gradient-text">2XP</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="hover:text-purple-accent transition-colors">About</a>
-                    <a href="#product" class="hover:text-purple-accent transition-colors">Product</a>
-                    <a href="#services" class="hover:text-purple-accent transition-colors">Services</a>
-                    <a href="#contact" class="hover:text-purple-accent transition-colors">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-text-light">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
-                <a href="#about" class="block hover:text-purple-accent transition-colors">About</a>
-                <a href="#product" class="block hover:text-purple-accent transition-colors">Product</a>
-                <a href="#services" class="block hover:text-purple-accent transition-colors">Services</a>
-                <a href="#contact" class="block hover:text-purple-accent transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -1133,13 +1115,7 @@
         // Set current year
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Mobile menu toggle - removed since navigation is now simplified
 
         // Enhanced smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1171,9 +1147,6 @@
                     }
 
                     requestAnimationFrame(animation);
-
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
                 }
             });
         });
@@ -1231,6 +1204,11 @@
 
         // Show first section immediately
         document.querySelector('#hero .section-fade-in').classList.add('visible');
+
+        // Make sure all sections are visible by default (remove fade-in behavior for now)
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            section.classList.add('visible');
+        });
 
         // Navigation scroll effect
         const navbar = document.getElementById('navbar');
