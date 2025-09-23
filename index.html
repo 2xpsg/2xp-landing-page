@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2XP SG - Building next-generation SaaS solutions for education and beyond. Mastery. Efficiency. Consistency.">
+    <meta name="keywords" content="SaaS, education technology, web development, Singapore, digital agency">
+    <title>2XP SG - Mastery. Efficiency. Consistency.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0d0d0d',
+                        'purple-accent': '#7F5AF0',
+                        'blue-accent': '#00CFFF',
+                        'text-light': '#e5e7eb'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #7F5AF0 0%, #00CFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #7F5AF0 0%, #00CFFF 100%);
+            padding: 2px;
+            border-radius: 0.5rem;
+        }
+
+        .gradient-border-inner {
+            background: #0d0d0d;
+            border-radius: 0.375rem;
+        }
+
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Full viewport sections */
+        .full-viewport {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(127, 90, 240, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-text-light smooth-scroll overflow-x-hidden">
+    <!-- Particle Background -->
+    <div id="tsparticles" class="particle-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#hero" class="text-2xl font-bold gradient-text">2XP SG</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-purple-accent transition-colors">About</a>
+                    <a href="#product" class="hover:text-purple-accent transition-colors">Product</a>
+                    <a href="#services" class="hover:text-purple-accent transition-colors">Services</a>
+                    <a href="#contact" class="hover:text-purple-accent transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-text-light">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+                <a href="#about" class="block hover:text-purple-accent transition-colors">About</a>
+                <a href="#product" class="block hover:text-purple-accent transition-colors">Product</a>
+                <a href="#services" class="block hover:text-purple-accent transition-colors">Services</a>
+                <a href="#contact" class="block hover:text-purple-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="full-viewport px-4">
+        <div class="text-center max-w-4xl mx-auto section-fade-in">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black gradient-text mb-6 leading-tight">
+                2XP SG
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-text-light mb-4 font-light">
+                Mastery. Efficiency. Consistency.
+            </p>
+            <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Building next-generation SaaS solutions for sports and education, starting with <span class="text-blue-accent font-semibold">Hoopers Hub SG</span>.
+            </p>
+            <a href="#contact" class="inline-block gradient-border hover-glow transition-all duration-300">
+                <div class="gradient-border-inner px-8 py-4 text-lg font-semibold">
+                    Get in touch
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="full-viewport px-4">
+        <div class="container mx-auto max-w-4xl section-fade-in h-full flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">About 2XP SG</h2>
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-800">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
+                    Founded by two tech entrepreneurs with over a decade of app-development expertise,
+                    <span class="text-purple-accent font-semibold">2XP SG</span> is the evolution of our work at
+                    <span class="text-blue-accent font-semibold">Unicomi Pte Ltd</span>. Our name reflects our combined experience
+                    and our mission: delivering <span class="text-white font-semibold">Mastery, Efficiency, and Consistency</span>
+                    in every solution we build.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    Our first product, <span class="text-blue-accent font-semibold">Hoopers Hub SG</span>, revolutionizes basketball league management
+                    with a globally-shared data platform. Unlike traditional siloed league systems, our solution connects
+                    players, teams, and statistics across all participating leagues, creating a unified basketball ecosystem.
+                </p>
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">10+</div>
+                        <div class="text-gray-400">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">2</div>
+                        <div class="text-gray-400">Expert Founders</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">100%</div>
+                        <div class="text-gray-400">Commitment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="product" class="full-viewport px-4">
+        <div class="container mx-auto max-w-6xl section-fade-in h-full flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">Our First Product</h2>
+            <div class="bg-gradient-to-r from-purple-accent/10 to-blue-accent/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-purple-accent/20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-6">Hoopers Hub SG</h3>
+                        <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+                            The future of basketball league management is here. Unlike traditional platforms that operate in isolation,
+                            Hoopers Hub SG creates a unified ecosystem where all leagues share global player data.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Global player statistics and history tracking</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Cross-league team and player discovery</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Unified tournament and league management</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <!-- Product Screenshot Placeholder -->
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-purple-accent/30 shadow-2xl">
+                            <div class="bg-gray-800 px-4 py-3 flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <div class="flex-1"></div>
+                                <div class="text-xs text-gray-400">Hoopers Hub SG</div>
+                            </div>
+                            <div class="aspect-video bg-gradient-to-br from-purple-accent/10 to-blue-accent/10 flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <div class="w-16 h-16 bg-gradient-to-r from-purple-accent to-blue-accent rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-gray-400 text-sm">Product Screenshot</p>
+                                    <p class="text-gray-500 text-xs mt-1">Replace with actual Hoopers Hub SG interface</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section id="gallery" class="full-viewport px-4 bg-gray-900/20">
+        <div class="container mx-auto max-w-6xl section-fade-in h-full flex flex-col justify-center">
+            <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-3 text-center">Product Screenshots</h2>
+            <p class="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
+                Explore the Hoopers Hub SG interface and see how we're revolutionizing basketball league management.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1 content-center max-h-[60vh] overflow-y-auto">
+                <!-- Screenshot 1 - Dashboard -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Dashboard</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-purple-accent/5 to-blue-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4m-6 0a2 2 0 002 2h2a2 2 0 002-2V9a2 2 0 00-2-2h-2a2 2 0 00-2 2v2"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">Dashboard Overview</p>
+                            <p class="text-gray-500 text-xs">League stats & analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 - Player Management -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Players</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-blue-accent/5 to-purple-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">Player Management</p>
+                            <p class="text-gray-500 text-xs">Global player database</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 - League Setup -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Leagues</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-purple-accent/5 to-blue-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">League Management</p>
+                            <p class="text-gray-500 text-xs">Tournament setup & scheduling</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 - Statistics -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Stats</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-blue-accent/5 to-purple-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">Statistics & Analytics</p>
+                            <p class="text-gray-500 text-xs">Performance tracking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 5 - Mobile App -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Mobile</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-purple-accent/5 to-blue-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">Mobile Experience</p>
+                            <p class="text-gray-500 text-xs">iOS & Android apps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot 6 - Team Management -->
+                <div class="bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-accent/50 transition-all duration-300 group">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-gray-400">Teams</div>
+                    </div>
+                    <div class="aspect-video bg-gradient-to-br from-blue-accent/5 to-purple-accent/5 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-400 text-sm">Team Management</p>
+                            <p class="text-gray-500 text-xs">Roster & lineup tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-gray-500 text-sm">
+                    Replace these placeholders with actual Hoopers Hub SG screenshots to showcase the platform's capabilities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="full-viewport px-4 bg-gray-900/30">
+        <div class="container mx-auto max-w-6xl section-fade-in h-full flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">What We Do</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-purple-accent/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-6 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">League Management Platforms</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Global data-sharing sports management systems like <span class="text-blue-accent font-semibold">Hoopers Hub SG</span>.
+                        Unlike traditional siloed platforms, we connect leagues worldwide for unified player and team tracking.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-blue-accent/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mb-6 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Custom Web Applications</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Complex systems, APIs, and integrations built for performance and security,
+                        designed to meet your unique business requirements.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-purple-accent/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-6 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sports & Education Solutions</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        From basketball league management to counselling systems and admissions platforms.
+                        We build comprehensive tools that empower communities with data-driven insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="full-viewport px-4">
+        <div class="container mx-auto max-w-4xl text-center section-fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-8">Let's Build Together</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Ready to transform your ideas into powerful digital solutions?
+                We're here to help you succeed.
+            </p>
+            <a href="mailto:hello@2xp.sg" class="inline-block gradient-border hover-glow transition-all duration-300">
+                <div class="gradient-border-inner px-8 py-4 text-lg font-semibold flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>hello@2xp.sg</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="h-20 flex items-center justify-center px-4 border-t border-gray-800 bg-dark-bg">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-500">
+                © <span id="current-year">2024</span> 2XP Private Limited. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize tsParticles
+        (async () => {
+            await loadSlim(tsParticles);
+
+            await tsParticles.load("tsparticles", {
+                background: {
+                    color: {
+                        value: "transparent",
+                    },
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "grab",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        grab: {
+                            distance: 140,
+                            links: {
+                                opacity: 0.8,
+                            }
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: ["#7F5AF0", "#00CFFF"],
+                    },
+                    links: {
+                        color: "#7F5AF0",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.3,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 1,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 3 },
+                    },
+                },
+                detectRetina: true,
+            });
+        })();
+
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Enhanced smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Enhanced smooth scrolling with custom timing
+                    const targetPosition = target.offsetTop;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 1000; // 1 second
+                    let start = null;
+
+                    function animation(currentTime) {
+                        if (start === null) start = currentTime;
+                        const timeElapsed = currentTime - start;
+                        const run = ease(timeElapsed, startPosition, distance, duration);
+                        window.scrollTo(0, run);
+                        if (timeElapsed < duration) requestAnimationFrame(animation);
+                    }
+
+                    // Easing function for smooth animation
+                    function ease(t, b, c, d) {
+                        t /= d / 2;
+                        if (t < 1) return c / 2 * t * t + b;
+                        t--;
+                        return -c / 2 * (t * (t - 2) - 1) + b;
+                    }
+
+                    requestAnimationFrame(animation);
+
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Keyboard navigation for sections
+        document.addEventListener('keydown', function(e) {
+            const sections = ['hero', 'about', 'product', 'gallery', 'services', 'contact'];
+            const currentSection = getCurrentSection();
+            const currentIndex = sections.indexOf(currentSection);
+
+            if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
+                e.preventDefault();
+                document.getElementById(sections[currentIndex + 1]).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                e.preventDefault();
+                document.getElementById(sections[currentIndex - 1]).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        // Get current section in viewport
+        function getCurrentSection() {
+            const sections = ['hero', 'about', 'product', 'gallery', 'services', 'contact'];
+            for (let section of sections) {
+                const element = document.getElementById(section);
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    return section;
+                }
+            }
+            return 'hero';
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Show first section immediately
+        document.querySelector('#hero .section-fade-in').classList.add('visible');
+    </script>
+</body>
+</html>
