@@ -186,6 +186,7 @@
                 font-size: 6rem;
             }
         }
+
     </style>
 </head>
 
@@ -226,18 +227,26 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="full-viewport px-4">
-        <div class="text-center max-w-6xl mx-auto section-fade-in">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black gradient-text mb-6 leading-tight">
-                Next-Gen SaaS. Built for Impact.
+    <section id="hero" class="full-viewport px-4 relative overflow-hidden">
+        <!-- Central Floating Orb -->
+        <div class="hero-floating-orb absolute left-1/2 top-1/2 w-80 h-80 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-accent/15 to-blue-accent/15 rounded-full blur-3xl z-0"></div>
+
+        <div class="text-center max-w-8xl mx-auto section-fade-in relative z-10">
+            <h1 class="hero-title text-6xl md:text-8xl lg:text-9xl font-black gradient-text mb-6 leading-tight">
+                <span class="title-word word-1 inline-block gradient-text">AI-Powered</span>
+               
+                <br>
+                <div class="-mt-4 text-6xl font-black gradient-text">
+                    <span class="title-word word-3 inline-block gradient-text">Innovation</span>
+                    <span class="title-word word-4 inline-block gradient-text">with</span>
+                    <span class="title-word word-5 inline-block gradient-text">Purpose.</span>
+                </div>
             </h1>
-            <p class="text-xl md:text-2xl lg:text-3xl text-text-light mb-4 font-light">
-                Innovation with Purpose.
-            </p>
-            <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p class="hero-subtitle text-xl md:text-2xl lg:text-3xl text-text-light mb-4 font-light">
                 Building next-generation SaaS solutions for sports and education.
             </p>
-            <a href="#contact" class="inline-block gradient-border hover-glow transition-all duration-300">
+         
+            <a href="#contact" class="hero-cta inline-block gradient-border hover-glow transition-all duration-300">
                 <div class="gradient-border-inner px-8 py-4 text-lg font-semibold">
                     Get in touch
                 </div>
@@ -245,27 +254,108 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="full-viewport px-4">
-        <div class="container mx-auto max-w-4xl section-fade-in h-full flex flex-col justify-center">
-            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">Who We Are</h2>
-            <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-800">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
-                    At <span class="text-purple-accent font-semibold">2XP</span>, we fuse over a decade of app-development expertise with a relentless pursuit of innovation. 
-                </p>
-                <p class="text-lg leading-relaxed text-gray-300 mb-6">Our journey began with Unicomi Pte Ltd, a digital agency we started more than a decade ago. There, we worked with clients across industries including multinational corporations, the banking and insurance sectors, and education. We delivered project management, long-term maintenance, and corporate websites powered by modern CMS platforms.</p>
-                <p class="text-lg leading-relaxed text-gray-300 mb-6">With 2XP SG, our focus is different. Instead of building custom solutions for individual clients, we are creating scalable products that can be used by entire communities. Sports and education are where we begin, applying the expertise gained at Unicomi to build platforms designed for thousands of users rather than one organization at a time.</p>
-                <div class="mt-8 grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">10+ Years of Experience in web and app development</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">From Clients to Communities: shifting from service projects to products</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">Focused Mission to build scalable products for sports and education</div>
+    <!-- About Section - Artistic Modern Layout -->
+    <section id="about" class="full-viewport px-4 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="floating-orb orb-1 absolute w-64 h-64 bg-gradient-to-r from-purple-accent/20 to-blue-accent/20 rounded-full blur-3xl"></div>
+        <div class="floating-orb orb-2 absolute w-96 h-96 bg-gradient-to-r from-blue-accent/10 to-purple-accent/10 rounded-full blur-3xl"></div>
+        <div class="floating-orb orb-3 absolute w-48 h-48 bg-gradient-to-r from-purple-accent/15 to-blue-accent/15 rounded-full blur-2xl"></div>
+
+        <div class="container mx-auto max-w-7xl h-full flex flex-col justify-center relative z-10">
+            <!-- Artistic Header -->
+            <div class="about-header text-center mb-20 relative">
+                <div class="header-bg absolute inset-0 bg-gradient-to-r from-transparent via-purple-accent/5 to-transparent blur-xl"></div>
+                <h2 class="title-main text-6xl md:text-8xl font-black gradient-text relative z-10">WHO</h2>
+                <h2 class="title-sub text-4xl md:text-6xl font-light text-gray-400 -mt-4 relative z-10">WE ARE</h2>
+                <div class="title-line absolute w-32 h-1 bg-gradient-to-r from-purple-accent to-blue-accent mx-auto left-0 right-0 mt-4"></div>
+            </div>
+
+            <!-- Artistic Content Layout -->
+            <div class="about-content relative">
+                <!-- Central Floating Card -->
+                <div class="central-card absolute left-1/2 top-1/2 w-80 h-80 -translate-x-1/2 -translate-y-1/2 z-20">
+                    <div class="card-inner bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-3xl p-8 border border-purple-accent/30 transform-gpu">
+                        <div class="central-icon w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold gradient-text text-center mb-4">2XP Innovation</h3>
+                        <p class="text-gray-300 text-center text-sm leading-relaxed">
+                            A decade of expertise fused with relentless innovation
+                        </p>
                     </div>
                 </div>
+
+                <!-- Orbiting Story Cards -->
+                <div class="story-orbit relative w-full h-96">
+                    <!-- Story Card 1 - Top Left -->
+                    <div class="story-card story-1 absolute w-72 h-48 top-0 left-0">
+                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
+                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mb-4 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">From Unicomi</h4>
+                            <p class="text-gray-300 text-sm">Our journey began serving multinational corporations, banking, and education sectors</p>
+                        </div>
+                    </div>
+
+                    <!-- Story Card 2 - Top Right -->
+                    <div class="story-card story-2 absolute w-72 h-48 top-0 right-0">
+                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
+                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-4 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">To Communities</h4>
+                            <p class="text-gray-300 text-sm">Now building scalable products for thousands of users in sports and education</p>
+                        </div>
+                    </div>
+
+                    <!-- Story Card 3 - Bottom Left -->
+                    <div class="story-card story-3 absolute w-72 h-48 bottom-0 left-0">
+                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
+                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-blue-accent to-purple-accent rounded-lg mb-4 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">10+ Years</h4>
+                            <p class="text-gray-300 text-sm">A decade of app development expertise across multiple industries</p>
+                        </div>
+                    </div>
+
+                    <!-- Story Card 4 - Bottom Right -->
+                    <div class="story-card story-4 absolute w-72 h-48 bottom-0 right-0">
+                        <div class="card-content bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50 transform-gpu">
+                            <div class="story-icon w-10 h-10 bg-gradient-to-r from-purple-accent to-blue-accent rounded-lg mb-4 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Future Focus</h4>
+                            <p class="text-gray-300 text-sm">Building next-gen platforms for sports and education communities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connecting Lines -->
+                <svg class="connection-lines absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 800 400">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7F5AF0;stop-opacity:0.4" />
+                            <stop offset="50%" style="stop-color:#00CFFF;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#7F5AF0;stop-opacity:0.4" />
+                        </linearGradient>
+                    </defs>
+                    <path class="connection-line line-1" d="M150,100 Q400,200 650,100" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
+                    <path class="connection-line line-2" d="M150,300 Q400,200 650,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
+                    <path class="connection-line line-3" d="M150,100 Q400,200 150,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
+                    <path class="connection-line line-4" d="M650,100 Q400,200 650,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -625,34 +715,32 @@
 
             // Step 2: Keep hero hidden during explosion - it will be revealed later
 
-            // Step 3: Start hero reveal during active explosion
-            masterTl.to(loadingScreen, {
+            // Step 3: Start hero reveal earlier during explosion
+            masterTl.to(heroContent, {
+                clipPath: 'circle(150% at 50% 50%)',
+                duration: 3.0,
+                ease: "power2.out",
+                onStart: () => {
+                    console.log('Hero revealing during explosion');
+                    // Start text animations immediately when radial reveal begins
+                    animateMainContent();
+                }
+            }, "+=0.8")
+
+            // Step 4: Transition to background particles during hero reveal
+            .call(() => {
+                transitionToBackgroundParticles();
+            }, null, "-=2.0")
+
+            // Step 5: Hide loading screen after hero starts revealing
+            .to(loadingScreen, {
                 opacity: 0,
-                duration: 1.0,
+                duration: 1.5,
                 ease: "power2.out",
                 onComplete: () => {
                     loadingScreen.classList.add('hidden');
                 }
-            }, "+=1.5")
-
-            // Step 4: Reveal hero section while explosion is still active
-            .to(heroContent, {
-                clipPath: 'circle(150% at 50% 50%)',
-                opacity: 1,
-                duration: 2.5,
-                ease: "power2.out",
-                onStart: () => {
-                    console.log('Hero revealing during active explosion');
-                },
-                onComplete: () => {
-                    animateMainContent();
-                }
-            }, "-=0.8")
-
-            // Step 5: Transition to background particles after hero starts revealing
-            .call(() => {
-                transitionToBackgroundParticles();
-            }, null, "-=1.5");
+            }, "-=2.5");
         }
 
         // Initialize explosion particles using tsParticles engine
@@ -809,33 +897,144 @@
             }
         }
 
-        // Animate main content entrance
+        // SPECTACULAR Enhanced Hero Animation (concurrent with radial reveal)
         function animateMainContent() {
-            console.log('Starting main content animations');
+            console.log('Starting spectacular hero animations');
 
-            // Create main content timeline
-            const mainTl = gsap.timeline();
+            // Create spectacular timeline (3 seconds to match radial reveal)
+            const heroTl = gsap.timeline({
+                onComplete: () => startHeroContinuousAnimations()
+            });
 
-            // Animate navigation first (subtle entrance from top)
-            mainTl.fromTo('nav',
+            // 1. Navigation entrance (independent)
+            heroTl.fromTo('nav',
                 { opacity: 0, y: -30 },
                 {
                     opacity: 1,
                     y: 0,
                     duration: 0.8,
-                    ease: "power3.out",
-                    onStart: () => console.log('Nav animating in')
+                    ease: "power3.out"
                 }
             );
 
-            // Hero content is already revealed by the circle expansion - no additional animations needed
-            // Just ensure final opacity and scale are set
-            mainTl.set('#hero h1, #hero p, #hero a', {
-                opacity: 1,
+            // 2. FLOATING ORB - Cosmic manifestation
+            heroTl.to('.hero-floating-orb', {
                 scale: 1,
-                y: 0
-            }, "-=0.3");
+                duration: 2.5,
+                ease: "elastic.out(1, 0.4)"
+            }, 0);
+
+            // 3. TITLE WORDS - Simplified cascade
+            heroTl.to('.title-word', {
+                scale: 1,
+                y: 0,
+                duration: 2.0,
+                stagger: {
+                    each: 0.15,
+                    from: "start"
+                },
+                ease: "back.out(1.7)"
+            }, 0.2);
+
+            // 4. SUBTITLE WORDS - Scale and position
+            heroTl.to('.subtitle-word', {
+                y: 0,
+                scale: 1,
+                duration: 1.8,
+                stagger: 0.2,
+                ease: "back.out(1.4)"
+            }, 0.8);
+
+            // 5. DESCRIPTION - Scale and position
+            heroTl.to('.hero-description', {
+                scale: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            }, 1.2);
+
+           
+            // 7. FINAL IMPACT - Title word highlight
+            heroTl.to('.word-5', {
+                scale: 1.05,
+                duration: 0.3,
+                ease: "power2.out",
+                yoyo: true,
+                repeat: 1
+            }, 2.7);
+
+            return heroTl;
         }
+
+        // Minimal ambient animations for Hero (to avoid transform conflicts)
+        function startHeroContinuousAnimations() {
+            // Only animate the floating orb (no text transforms)
+            gsap.to('.hero-floating-orb', {
+                scale: 1.1,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            // CTA button gentle pulse (safe, no conflicting transforms)
+            gsap.to('.hero-cta', {
+                scale: 1.02,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        }
+
+        // Enhanced hover effects for hero elements
+        function initHeroHoverEffects() {
+            // Title words individual hover
+            document.querySelectorAll('.title-word').forEach((word, index) => {
+                word.addEventListener('mouseenter', () => {
+                    gsap.to(word, {
+                        scale: 1.1,
+                        rotationY: 10,
+                        z: 50,
+                        duration: 0.4,
+                        ease: "power3.out"
+                    });
+                });
+
+                word.addEventListener('mouseleave', () => {
+                    gsap.to(word, {
+                        scale: 1,
+                        rotationY: 0,
+                        z: 0,
+                        duration: 0.4,
+                        ease: "power3.out"
+                    });
+                });
+            });
+
+            // Floating orb interaction
+            const floatingOrb = document.querySelector('.hero-floating-orb');
+            if (floatingOrb) {
+                floatingOrb.addEventListener('mouseenter', () => {
+                    gsap.to(floatingOrb, {
+                        scale: 1.3,
+                        duration: 0.5,
+                        ease: "power3.out"
+                    });
+                });
+
+                floatingOrb.addEventListener('mouseleave', () => {
+                    gsap.to(floatingOrb, {
+                        scale: 1.1,
+                        duration: 0.5,
+                        ease: "power3.out"
+                    });
+                });
+            }
+        }
+
+        // Initialize enhanced hero hover effects
+        initHeroHoverEffects();
 
         // Initialize tsParticles
         (async () => {
@@ -957,7 +1156,23 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Hide main content initially
             gsap.set('nav', { opacity: 0 });
-            gsap.set('#hero .section-fade-in', { opacity: 0, clipPath: 'circle(0% at 50% 50%)' });
+            gsap.set('#hero .section-fade-in', { opacity: 1, clipPath: 'circle(0% at 50% 50%)' });
+            // Set initial states for enhanced animations (simplified to avoid conflicts)
+            gsap.set('.hero-floating-orb', { scale: 0 });
+            gsap.set('.title-word', {
+                scale: 0.5,
+                y: 30,
+                transformOrigin: 'center'
+            });
+            gsap.set('.subtitle-word', {
+                y: 40,
+                scale: 0.8
+            });
+            gsap.set('.hero-description', {
+                scale: 0.8,
+                y: 30
+            });
+           
         });
 
 
@@ -1107,6 +1322,267 @@
                 duration: 1.5,    // Total animation duration
             });
         }
+
+        // OUT-OF-THIS-WORLD GSAP Animations for Artistic "Who We Are" Section
+        function initArtisticAboutAnimations() {
+            const aboutSection = document.querySelector('#about');
+            if (!aboutSection) return;
+
+            // Set initial states for all elements
+            gsap.set('.floating-orb', { scale: 0, opacity: 0 });
+            gsap.set('.title-main', { scale: 0, rotationX: -90, transformOrigin: 'center bottom' });
+            gsap.set('.title-sub', { opacity: 0, y: 100, skewX: -20 });
+            gsap.set('.title-line', { scaleX: 0, transformOrigin: 'center' });
+            gsap.set('.central-card', { scale: 0, rotationY: 180, z: -500 });
+            gsap.set('.story-card', { scale: 0, rotationZ: 45, opacity: 0 });
+            gsap.set('.connection-line', { opacity: 0, strokeDasharray: '1000', strokeDashoffset: '1000' });
+
+            // Master Timeline with ScrollTrigger
+            const masterTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: aboutSection,
+                    start: "top 60%",
+                    end: "bottom 40%",
+                    toggleActions: "play none none reverse",
+                    onComplete: () => startContinuousAnimations()
+                }
+            });
+
+            // 1. FLOATING ORBS - Particle-like entrance
+            masterTl.to('.floating-orb', {
+                scale: 1,
+                opacity: 1,
+                duration: 2,
+                stagger: {
+                    each: 0.3,
+                    from: "random"
+                },
+                ease: "elastic.out(1, 0.3)",
+                physics2D: {
+                    velocity: "random(-200, 200)",
+                    angle: "random(0, 360)",
+                    gravity: 50
+                }
+            });
+
+            // 2. TITLE EXPLOSION - 3D flip entrance
+            masterTl.to('.title-main', {
+                scale: 1.2,
+                rotationX: 0,
+                duration: 1.5,
+                ease: "back.out(2)",
+                transformStyle: "preserve-3d"
+            }, "-=1.5")
+            .to('.title-main', {
+                scale: 1,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+
+            // 3. SUBTITLE MORPHING - Liquid text effect
+            masterTl.to('.title-sub', {
+                opacity: 1,
+                y: 0,
+                skewX: 0,
+                duration: 1.2,
+                ease: "elastic.out(1, 0.8)"
+            }, "-=1");
+
+            // 4. TITLE LINE LIGHTNING
+            masterTl.to('.title-line', {
+                scaleX: 1,
+                duration: 0.8,
+                ease: "power4.out"
+            }, "-=0.5");
+
+            // 5. CENTRAL CARD - Interdimensional portal entrance
+            masterTl.to('.central-card', {
+                scale: 1,
+                rotationY: 0,
+                z: 0,
+                duration: 2,
+                ease: "power3.out",
+                transformStyle: "preserve-3d"
+            }, "-=0.8");
+
+            // 6. STORY CARDS - Orbital cascade with physics
+            const storyCards = ['.story-1', '.story-2', '.story-3', '.story-4'];
+            storyCards.forEach((card, index) => {
+                masterTl.to(card, {
+                    scale: 1,
+                    rotationZ: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "back.out(1.7)",
+                    motionPath: {
+                        path: "M0,0 Q" + (Math.random() * 200 - 100) + "," + (Math.random() * 100 - 50) + " 0,0",
+                        autoRotate: true
+                    }
+                }, `-=${1.2 - index * 0.2}`);
+            });
+
+            // 7. CONNECTION LINES - Energy streams
+            masterTl.to('.connection-line', {
+                opacity: 0.8,
+                strokeDashoffset: 0,
+                duration: 2,
+                stagger: 0.3,
+                ease: "power2.inOut"
+            }, "-=2");
+
+            // 8. ICONS - Quantum spin entrance
+            masterTl.to('.story-icon, .central-icon', {
+                rotationY: 720,
+                scale: 1.1,
+                duration: 2,
+                stagger: 0.1,
+                ease: "power2.out"
+            }, "-=1.5")
+            .to('.story-icon, .central-icon', {
+                scale: 1,
+                duration: 0.5,
+                ease: "back.out(1.7)"
+            });
+
+            // Continuous ambient animations
+            function startContinuousAnimations() {
+                // Floating orbs gentle movement
+                gsap.to('.orb-1', {
+                    x: 50,
+                    y: 30,
+                    duration: 8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                gsap.to('.orb-2', {
+                    x: -30,
+                    y: -20,
+                    duration: 10,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                gsap.to('.orb-3', {
+                    x: 40,
+                    y: -40,
+                    duration: 6,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                // Central card breathing effect
+                gsap.to('.central-card', {
+                    scale: 1.02,
+                    duration: 3,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                // Connection lines energy pulse
+                gsap.to('.connection-line', {
+                    strokeWidth: 4,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    stagger: 0.5,
+                    ease: "sine.inOut"
+                });
+
+                // Story cards subtle hover
+                gsap.to('.story-card', {
+                    y: -5,
+                    duration: 4,
+                    repeat: -1,
+                    yoyo: true,
+                    stagger: 0.8,
+                    ease: "sine.inOut"
+                });
+            }
+
+            // EXTREME HOVER EFFECTS
+            document.querySelectorAll('.story-card').forEach((card, index) => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        scale: 1.1,
+                        rotationY: 15,
+                        z: 100,
+                        boxShadow: "0 25px 80px rgba(127, 90, 240, 0.4)",
+                        duration: 0.4,
+                        ease: "power3.out"
+                    });
+
+                    // Ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.className = 'absolute inset-0 bg-gradient-to-r from-purple-accent/20 to-blue-accent/20 rounded-2xl animate-ping';
+                    card.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        scale: 1,
+                        rotationY: 0,
+                        z: 0,
+                        boxShadow: "0 0 0 rgba(127, 90, 240, 0)",
+                        duration: 0.4,
+                        ease: "power3.out"
+                    });
+                });
+            });
+
+            // Central card INSANE hover effect
+            const centralCard = document.querySelector('.central-card');
+            if (centralCard) {
+                centralCard.addEventListener('mouseenter', () => {
+                    gsap.to(centralCard, {
+                        scale: 1.15,
+                        rotationY: 10,
+                        rotationX: 5,
+                        z: 200,
+                        duration: 0.5,
+                        ease: "power3.out"
+                    });
+
+                    // Particle explosion on hover
+                    for (let i = 0; i < 20; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'absolute w-2 h-2 bg-gradient-to-r from-purple-accent to-blue-accent rounded-full';
+                        particle.style.left = '50%';
+                        particle.style.top = '50%';
+                        centralCard.appendChild(particle);
+
+                        gsap.to(particle, {
+                            x: Math.random() * 400 - 200,
+                            y: Math.random() * 400 - 200,
+                            opacity: 0,
+                            scale: 0,
+                            duration: 2,
+                            ease: "power2.out",
+                            onComplete: () => particle.remove()
+                        });
+                    }
+                });
+
+                centralCard.addEventListener('mouseleave', () => {
+                    gsap.to(centralCard, {
+                        scale: 1.02,
+                        rotationY: 0,
+                        rotationX: 0,
+                        z: 0,
+                        duration: 0.5,
+                        ease: "power3.out"
+                    });
+                });
+            }
+        }
+
+        // Initialize the artistic animations
+        initArtisticAboutAnimations();
     </script>
 </body>
 </html>
