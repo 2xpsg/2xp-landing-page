@@ -199,7 +199,7 @@
     <div id="tsparticles" class="particle-container"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-gray-800">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="#hero" class="text-2xl font-bold gradient-text">2XP SG</a>
@@ -227,15 +227,15 @@
 
     <!-- Hero Section -->
     <section id="hero" class="full-viewport px-4">
-        <div class="text-center max-w-4xl mx-auto section-fade-in">
+        <div class="text-center max-w-6xl mx-auto section-fade-in">
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-black gradient-text mb-6 leading-tight">
-                2XP
+                Next-Gen SaaS. Built for Impact.
             </h1>
             <p class="text-xl md:text-2xl lg:text-3xl text-text-light mb-4 font-light">
-                Mastery. Efficiency. Consistency.
+                Innovation with Purpose.
             </p>
             <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Building next-generation SaaS solutions for sports and education, starting with <span class="text-blue-accent font-semibold">Hoopers Hub SG</span>.
+                Building next-generation SaaS solutions for sports and education.
             </p>
             <a href="#contact" class="inline-block gradient-border hover-glow transition-all duration-300">
                 <div class="gradient-border-inner px-8 py-4 text-lg font-semibold">
@@ -248,32 +248,22 @@
     <!-- About Section -->
     <section id="about" class="full-viewport px-4">
         <div class="container mx-auto max-w-4xl section-fade-in h-full flex flex-col justify-center">
-            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">About 2XP SG</h2>
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">Who We Are</h2>
             <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-800">
                 <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
-                    Founded by two tech entrepreneurs with over a decade of app-development expertise,
-                    <span class="text-purple-accent font-semibold">2XP SG</span> is the evolution of our work at
-                    <span class="text-blue-accent font-semibold">Unicomi Pte Ltd</span>. Our name reflects our combined experience
-                    and our mission: delivering <span class="text-white font-semibold">Mastery, Efficiency, and Consistency</span>
-                    in every solution we build.
+                    At <span class="text-purple-accent font-semibold">2XP</span>, we fuse over a decade of app-development expertise with a relentless pursuit of innovation. 
                 </p>
-                <p class="text-lg leading-relaxed text-gray-300">
-                    Our first product, <span class="text-blue-accent font-semibold">Hoopers Hub SG</span>, revolutionizes basketball league management
-                    with a globally-shared data platform. Unlike traditional siloed league systems, our solution connects
-                    players, teams, and statistics across all participating leagues, creating a unified basketball ecosystem.
-                </p>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">Our journey began with Unicomi Pte Ltd, a digital agency we started more than a decade ago. There, we worked with clients across industries including multinational corporations, the banking and insurance sectors, and education. We delivered project management, long-term maintenance, and corporate websites powered by modern CMS platforms.</p>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">With 2XP SG, our focus is different. Instead of building custom solutions for individual clients, we are creating scalable products that can be used by entire communities. Sports and education are where we begin, applying the expertise gained at Unicomi to build platforms designed for thousands of users rather than one organization at a time.</p>
                 <div class="mt-8 grid md:grid-cols-3 gap-6">
                     <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">10+</div>
-                        <div class="text-gray-400">Years Experience</div>
+                        <div class="text-3xl font-bold gradient-text">10+ Years of Experience in web and app development</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">2</div>
-                        <div class="text-gray-400">Expert Founders</div>
+                        <div class="text-3xl font-bold gradient-text">From Clients to Communities: shifting from service projects to products</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">100%</div>
-                        <div class="text-gray-400">Commitment</div>
+                        <div class="text-3xl font-bold gradient-text">Focused Mission to build scalable products for sports and education</div>
                     </div>
                 </div>
             </div>
@@ -1072,6 +1062,30 @@
 
         // Show first section immediately
         document.querySelector('#hero .section-fade-in').classList.add('visible');
+
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        let isScrolled = false;
+
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50 && !isScrolled) {
+                // Add glass morphism on scroll
+                navbar.classList.add('bg-dark-bg/80', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+                isScrolled = true;
+            } else if (scrollY <= 50 && isScrolled) {
+                // Remove glass morphism when at top
+                navbar.classList.remove('bg-dark-bg/80', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+                isScrolled = false;
+            }
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', updateNavbar);
+
+        // Check initial state
+        updateNavbar();
 
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
