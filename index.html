@@ -80,6 +80,12 @@
         /* Enhanced smooth scrolling */
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Prevent scroll restoration on mobile */
+        body {
+            overflow-x: hidden;
         }
 
         /* Full viewport sections */
@@ -448,7 +454,7 @@
                         </p>
 
                         <p class="text-lg leading-relaxed text-gray-300 mb-6 story-paragraph">
-                            With 2XP, our focus is different. Instead of building custom solutions for individual clients, we are creating scalable products that can be used by entire communities. Sports is where we begin, applying the expertise gained at Unicomi to build platforms designed for thousands of users rather than one organisation at a time, because sports tech represents the future of how communities connect, compete, and grow.
+                            At 2XP, our focus is clear: we are moving beyond custom solutions for individual clients to create scalable platforms that empower entire communities. We begin with sports, building on the expertise developed at Unicomi to design systems that serve thousands of users rather than a single organisation. Sports tech is driving the next wave of digital transformation, redefining how communities connect, compete, and grow.
                         </p>
                     </div>
                 </div>
@@ -1111,6 +1117,8 @@
 
         // Handle page load
         window.addEventListener('load', () => {
+            // Additional scroll reset on full page load
+            window.scrollTo(0, 0);
             checkLoadingComplete();
         });
 
@@ -1122,8 +1130,18 @@
             }
         }, 3000);
 
+        // Disable browser scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
         // Prevent content from showing during load
         document.addEventListener('DOMContentLoaded', () => {
+            // Ensure page starts at top (especially important for mobile)
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
             // Hide main content initially
             gsap.set('nav', { opacity: 0 });
             gsap.set('#hero .section-fade-in', { opacity: 1, clipPath: 'circle(0% at 50% 50%)' });
@@ -1320,26 +1338,18 @@
                     trigger: aboutSection,
                     start: "top 95%", // Animation starts when section is 10% visible
                     end: "bottom 20%", // Animation ends when section bottom is at 20% of viewport
-                    scrub: 1, // Smooth scrubbing tied to scroll position
-                    onToggle: self => {
-                        if (self.isActive) {
-                            startContinuousAnimations();
-                        } else {
-                            // Stop continuous animations when not active
-                            gsap.killTweensOf(['.orb-1', '.orb-2', '.orb-3', '.central-card', '.connection-line', '.story-card']);
-                        }
-                    }
+                    scrub: 1
                 }
             });
 
-            // Pin Timeline - Pins section when 80% is visible to complete animations
+            // Pin Timeline - Pins section when 80% is visible to complete animations (desktop only)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: aboutSection,
                     start: "top 0%", // Pin starts when 90% of section is visible
                     end: "+=100%", // Pin duration - equivalent to 100% of viewport height
-                    pin: true, // Pin/freeze the section during animation
-                    pinSpacing: true, // Add spacing to prevent layout shift
+                    pin: window.innerWidth > 768, // Pin only on desktop (screen width > 768px)
+                    pinSpacing: window.innerWidth > 768, // Add spacing only on desktop
                     anticipatePin: 1 // Smooth pin start
                 }
             });
@@ -1452,97 +1462,8 @@
                 stagger: 0.02,
                 ease: "back.out(1.2)"
             }, 0.75);
-
-            // Continuous ambient animations
-            function startContinuousAnimations() {
-                // Floating orbs gentle movement
-                gsap.to('.orb-1', {
-                    x: 50,
-                    y: 30,
-                    duration: 8,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                gsap.to('.orb-2', {
-                    x: -30,
-                    y: -20,
-                    duration: 10,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                gsap.to('.orb-3', {
-                    x: 40,
-                    y: -40,
-                    duration: 6,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                // Central card breathing effect
-                gsap.to('.central-card', {
-                    scale: 1.02,
-                    duration: 3,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                // Connection lines energy pulse
-                gsap.to('.connection-line', {
-                    strokeWidth: 4,
-                    duration: 2,
-                    repeat: -1,
-                    yoyo: true,
-                    stagger: 0.5,
-                    ease: "sine.inOut"
-                });
-
-                // Story cards subtle hover
-                gsap.to('.story-card', {
-                    y: -5,
-                    duration: 4,
-                    repeat: -1,
-                    yoyo: true,
-                    stagger: 0.8,
-                    ease: "sine.inOut"
-                });
-            }
-
-            // EXTREME HOVER EFFECTS
-            document.querySelectorAll('.story-card').forEach((card, index) => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        scale: 1.1,
-                        rotationY: 15,
-                        z: 100,
-                        boxShadow: "0 25px 80px rgba(127, 90, 240, 0.4)",
-                        duration: 0.4,
-                        ease: "power3.out"
-                    });
-
-                    // Ripple effect
-                    const ripple = document.createElement('div');
-                    ripple.className = 'absolute inset-0 bg-gradient-to-r from-purple-accent/20 to-blue-accent/20 rounded-2xl animate-ping';
-                    card.appendChild(ripple);
-                    setTimeout(() => ripple.remove(), 1000);
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        scale: 1,
-                        rotationY: 0,
-                        z: 0,
-                        boxShadow: "0 0 0 rgba(127, 90, 240, 0)",
-                        duration: 0.4,
-                        ease: "power3.out"
-                    });
-                });
-            });
+    
+            
 
             // Central card INSANE hover effect
             const centralCard = document.querySelector('.central-card');
@@ -1595,216 +1516,55 @@
             const productSection = document.querySelector('#product');
             if (!productSection) return;
 
-            // Set initial states for all elements
-            gsap.set('.product-orb-1, .product-orb-2, .product-orb-3', { scale: 0, opacity: 0 });
+            // Set initial states for content elements only
+            gsap.set('#product .product-title', { opacity: 0, y: 30 });
+            gsap.set('#product .product-description', { opacity: 0, y: 40 });
+            gsap.set('#product .feature-card', { opacity: 0, y: 20 });
+            gsap.set('#product .product-screenshot', { opacity: 0, y: 30 });
 
-            // Product header elements - use scoped selectors like About section
-            gsap.set('#product .title-main', { scale: 0, rotationX: -90, transformOrigin: 'center bottom' });
-            gsap.set('#product .title-sub', { opacity: 0, y: 100, skewX: -20 });
-            gsap.set('#product .title-line', { scaleX: 0, transformOrigin: 'center' });
 
-            // Set initial states for product-content elements (scoped to #product)
-            gsap.set('#product .central-product-card', { opacity: 0, y: 30, scale: 0.95 });
-            gsap.set('#product .product-title', { opacity: 0, y: 30, scale: 0.95 });
-            gsap.set('#product .product-description', { opacity: 0, y: 40, scale: 0.95 });
-            gsap.set('#product .feature-card', { opacity: 0, y: 20, scale: 0.9 });
-            gsap.set('#product .product-screenshot', { opacity: 0, y: 30, scale: 0.95 });
-            gsap.set('#product .vision-word', { opacity: 0, y: 20, scale: 0.8 });
-
-            // Debug: Check if elements exist
-            console.log('Product title-main found:', document.querySelector('#product .title-main'));
-            console.log('Product title-sub found:', document.querySelector('#product .title-sub'));
-            console.log('Product title-line found:', document.querySelector('#product .title-line'));
-            console.log('Product central-card found:', document.querySelector('#product .central-product-card'));
-            console.log('Product title found:', document.querySelector('#product .product-title'));
-            console.log('Product description found:', document.querySelector('#product .product-description'));
-            console.log('Product feature cards found:', document.querySelectorAll('#product .feature-card').length);
-            console.log('Product screenshot found:', document.querySelector('#product .product-screenshot'));
-
-            // Animation Timeline - Starts early when section comes into view
+            // Simple Animation Timeline - same timing as other sections
             const productTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: productSection,
-                    start: "top 95%", // Animation starts when section is 20% visible
-                    end: "bottom 20%", // Animation ends when section bottom is at 20% of viewport
-                    scrub: 1, // Smooth scrubbing tied to scroll position
-                    immediateRender: false,
-                    onUpdate: self => {
-                        console.log('Product ScrollTrigger progress:', self.progress);
-                    },
-                    onToggle: self => {
-                        console.log('Product ScrollTrigger toggled:', self.isActive);
-                        if (self.isActive) {
-                            startProductContinuousAnimations();
-                        } else {
-                            // Stop continuous animations when not active
-                            gsap.killTweensOf(['.product-orb-1', '.product-orb-2', '.product-orb-3', '.central-product-card', '.feature-card', '.product-screenshot']);
-                        }
-                    }
+                    start: "top 85%",
+                    end: "bottom 20%",
+                    scrub: 1
                 }
             });
 
-            // Pin Timeline - Pins section when 80% is visible to complete animations
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: productSection,
-                    start: "top 0%", // Pin starts when 80% of section is visible
-                    end: "+=100%", // Pin duration - equivalent to 100% of viewport height
-                    pin: true, // Pin/freeze the section during animation
-                    pinSpacing: true, // Add spacing to prevent layout shift
-                    anticipatePin: 1 // Smooth pin start
-                }
-            });
-
-            // 1. FLOATING ORBS - Scroll-based entrance (0% - 10% of scroll)
-            productTl.to('.product-orb-1, .product-orb-2, .product-orb-3', {
-                scale: 1,
-                opacity: 1,
-                duration: 0.1,
-                stagger: 0.02,
-                ease: "power2.out"
-            });
-
-            // 2. TITLE MAIN - Scroll-based entrance (5% - 15% of scroll)
-            productTl.to('#product .title-main', {
-                scale: 1,
-                rotationX: 0,
-                duration: 0.1,
-                ease: "power2.out"
-            }, 0.05);
-
-            // 3. SUBTITLE - Scroll-based entrance (10% - 20% of scroll)
-            productTl.to('#product .title-sub', {
+            // Simple content animations
+            productTl.to('#product .product-title', {
                 opacity: 1,
                 y: 0,
-                skewX: 0,
-                duration: 0.1,
-                ease: "power2.out"
-            }, 0.1);
-
-            // 4. TITLE LINE - Scroll-based entrance (completes header at 0.15)
-            productTl.to('#product .title-line', {
-                scaleX: 1,
-                duration: 0.07,
-                ease: "power2.out"
-            }, 0.15);
-
-            // 5. CENTRAL PRODUCT CARD - Animate immediately with orbs
-            productTl.to('#product .central-product-card', {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-
-            // 6. CONTENT - All content animates immediately together
-            .to('#product .product-title', {
-                opacity: 1,
-                y: 0,
-                scale: 1,
                 duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to('#product .product-description', {
                 opacity: 1,
                 y: 0,
-                scale: 1,
                 duration: 0.2,
                 ease: "power2.out"
-            }, 0)
-            .to('#product .product-screenshot', {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-
-            // 7. FEATURE CARDS - Animate immediately with content
+            }, 0.05)
             .to('#product .feature-card', {
                 opacity: 1,
                 y: 0,
-                scale: 1,
                 duration: 0.2,
-                stagger: 0.01,
+                stagger: 0.03,
                 ease: "power2.out"
-            }, 0);
-
-            // 8. VISION WORDS - Complete early
-            productTl.to('#product .vision-word', {
+            }, 0.1)
+            .to('#product .product-screenshot', {
                 opacity: 1,
                 y: 0,
-                scale: 1,
-                duration: 0.06,
-                stagger: 0.005,
+                duration: 0.2,
                 ease: "power2.out"
-            }, 0.16);
+            }, 0.15);
 
-            // Continuous ambient animations
-            function startProductContinuousAnimations() {
-                // Floating orbs gentle movement
-                gsap.to('.product-orb-1', {
-                    x: -40,
-                    y: 30,
-                    duration: 9,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                gsap.to('.product-orb-2', {
-                    x: 30,
-                    y: -25,
-                    duration: 11,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                gsap.to('.product-orb-3', {
-                    x: -35,
-                    y: -35,
-                    duration: 7,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                // Central card breathing effect
-                gsap.to('.central-product-card', {
-                    scale: 1.02,
-                    duration: 3.5,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-
-                // Feature cards subtle hover
-                gsap.to('.feature-card', {
-                    y: -3,
-                    duration: 4.5,
-                    repeat: -1,
-                    yoyo: true,
-                    stagger: 1,
-                    ease: "sine.inOut"
-                });
-
-                // Screenshot gentle rotation
-                gsap.to('.product-screenshot', {
-                    rotationY: 2,
-                    duration: 5,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-            }
 
             // SIMPLIFIED HOVER EFFECTS (scoped to #product)
             document.querySelectorAll('#product .feature-card').forEach((card, index) => {
                 card.addEventListener('mouseenter', () => {
                     gsap.to(card, {
-                        scale: 1.02,
                         y: -5,
                         duration: 0.3,
                         ease: "power2.out"
@@ -1813,7 +1573,6 @@
 
                 card.addEventListener('mouseleave', () => {
                     gsap.to(card, {
-                        scale: 1,
                         y: 0,
                         duration: 0.3,
                         ease: "power2.out"
@@ -1837,6 +1596,7 @@
             gsap.set('#contact .title-line', { scaleX: 0, transformOrigin: 'center' });
 
             // Set initial states for contact-content elements (scoped to #contact)
+            gsap.set('#contact .contact-content', { opacity: 0, y: 50, scale: 0.95 });
             gsap.set('#contact .central-contact-card', { opacity: 0, y: 30, scale: 0.95 });
             gsap.set('#contact .contact-description', { opacity: 0, y: 30, scale: 0.95 });
             gsap.set('#contact .contact-button', { opacity: 0, y: 40, scale: 0.95 });
@@ -1846,8 +1606,8 @@
             const contactTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: contactSection,
-                    start: "top 95%", // Animation starts when section is 10% visible
-                    end: "bottom 20%", // Animation ends when section bottom is at 20% of viewport
+                    start: "top 85%", // Animation starts when section is 15% visible
+                    end: "bottom 20%", // Animation ends when section top is at 30% of viewport
                     scrub: 1, // Smooth scrubbing tied to scroll position
                     immediateRender: false,
                     onToggle: self => {
@@ -1861,14 +1621,14 @@
                 }
             });
 
-            // Pin Timeline - Pins section when 90% is visible to complete animations
+            // Pin Timeline - Pins section when 90% is visible to complete animations (desktop only)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: contactSection,
                     start: "top 0%", // Pin starts when 90% of section is visible
                     end: "+=100%", // Pin duration - equivalent to 100% of viewport height
-                    pin: true, // Pin/freeze the section during animation
-                    pinSpacing: true, // Add spacing to prevent layout shift
+                    pin: window.innerWidth > 768, // Pin only on desktop (screen width > 768px)
+                    pinSpacing: window.innerWidth > 768, // Add spacing only on desktop
                     anticipatePin: 1 // Smooth pin start
                 }
             });
@@ -1906,40 +1666,92 @@
                 ease: "power2.out"
             }, 0.15);
 
-            // 5. CENTRAL CONTACT CARD - Animate immediately with orbs
-            contactTl.to('#contact .central-contact-card', {
+            // 5. CONTACT CONTENT CONTAINER - Animate after header completes
+            contactTl.to('#contact .contact-content', {
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 duration: 0.2,
                 ease: "power2.out"
-            }, 0)
+            }, 0.2)
 
-            // 6. CONTENT - All content animates immediately together
+            // 6. CENTRAL CONTACT CARD - Animate with container
+            .to('#contact .central-contact-card', {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.2,
+                ease: "power2.out"
+            }, 0.2)
+
+            // 7. CONTENT - All content animates with container
             .to('#contact .contact-description', {
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 duration: 0.2,
                 ease: "power2.out"
-            }, 0)
+            }, 0.2)
             .to('#contact .contact-button', {
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 duration: 0.2,
                 ease: "power2.out"
-            }, 0);
+            }, 0.2);
 
-            // 7. VISION WORDS - Complete early
+            // 8. VISION WORDS - Animate after content
             contactTl.to('#contact .vision-word', {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 0.06,
-                stagger: 0.005,
+                duration: 0.1,
+                stagger: 0.02,
                 ease: "power2.out"
-            }, 0.16);
+            }, 0.3);
+
+            // Fallback animation to ensure completion when section is fully visible
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: contactSection,
+                    start: "top 50%",
+                    onEnter: () => {
+                        // Force complete all contact animations if they're not already at 100%
+                        gsap.to('#contact .contact-content, #contact .central-contact-card, #contact .contact-description, #contact .contact-button', {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                        gsap.to('#contact .title-main', {
+                            scale: 1,
+                            rotationX: 0,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                        gsap.to('#contact .title-sub', {
+                            opacity: 1,
+                            y: 0,
+                            skewX: 0,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                        gsap.to('#contact .title-line', {
+                            scaleX: 1,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                        gsap.to('#contact .vision-word', {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                    }
+                }
+            });
 
             // Continuous animations function for contact orbs
             function startContactContinuousAnimations() {
