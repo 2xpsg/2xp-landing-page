@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gradient Sweep — Text Only (161°)</title>
+<style>
+  /* page */
+  html,body { height:100%; margin:0; }
+  body {
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* gradient definition (161deg) */
+  :root {
+    --grad: linear-gradient(
+      161deg,
+      #f30968 0%,
+      #6e08e8 40%,
+      #1717af 60%,
+      #f30968 80%,
+      #6f0836 100%
+    );
+  }
+
+  /* wrapper that holds two identical text layers */
+  .text-wrap {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    font-size: 220px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    user-select: none;
+  }
+
+  /* base styles shared by both layers */
+  .gradient-static,
+  .gradient-anim {
+    display: block;
+    white-space: pre;                 /* preserve spacing */
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Chrome/Safari */
+    color: transparent;                   /* Firefox fallback */
+  }
+
+  /* STATIC layer: final, accurate gradient. Visible to screen readers. */
+  .gradient-static {
+    background: var(--grad) 0% 0% / 100% no-repeat text;
+  }
+
+  /* ANIMATED layer: slides the same gradient over the static one.
+     It's positioned on top and set aria-hidden so screen readers
+     won't read the duplicate text. */
+  .gradient-anim {
+    position: absolute;
+    inset: 0;
+    background: var(--grad);
+    background-size: 200% 200%;    /* give room to slide */
+    background-position: 100% 100%;/* start at bottom-left (with 161°) */
+    opacity: 1;                 /* blend strength of the sweep */
+    pointer-events: none;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* aria-hidden: true; */
+    animation: sweep161 6200ms cubic-bezier(.22,.9,.3,1) forwards;
+  }
+
+  @keyframes sweep161 {
+    from {
+      background-position: 100% 100%;
+      background-size: 200% 200%;
+    }
+    to   {
+      background-position: 0% 0%;
+      background-size: 100% 100%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <div>
+    <!-- Duplicate text (one static, one animated). 
+         Keep the first (static) layer for accessibility; hide the moving one from SRs. -->
+    <div class="text-wrap" aria-label="2XP">
+      <span class="gradient-static">2XP</span>
+      <span class="gradient-anim" aria-hidden="true">2XP</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
