@@ -308,18 +308,8 @@ function initHeroScrollEffects() {
         });
     });
 
-    gsap.to('.title-word', {
-        scrollTrigger: {
-            trigger: '#hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 1.8
-        },
-        y: (i) => -120 - (i * 10),
-        rotationX: (i) => i * 5,
-        ease: 'none',
-        stagger: 0.1
-    });
+    // Remove individual word scroll effects to maintain spacing
+    // The hero-title class already has proper scroll effects
 }
 
 // Hero title animations
